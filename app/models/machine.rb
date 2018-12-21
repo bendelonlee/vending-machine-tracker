@@ -9,4 +9,8 @@ class Machine < ApplicationRecord
   def average_price
     Snack.joins(:machines).where("snack_machines.machine_id = ?", "#{self.id}").average(:price)
   end
+
+  def unique_snacks
+    snacks.count
+  end
 end

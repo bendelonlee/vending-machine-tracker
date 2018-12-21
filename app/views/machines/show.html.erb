@@ -11,7 +11,7 @@
       <% snack.machines.each do |machine| %>
         <li>
           <%= machine.location %> Average Price: <%= machine.average_price %>
-          <p>Number of Unique Snacks: <%= machine.snacks.count %></p>
+          <p>Number of Unique Snacks: <%= machine.unique_snacks %></p>
         </li>
 
       <% end %>
