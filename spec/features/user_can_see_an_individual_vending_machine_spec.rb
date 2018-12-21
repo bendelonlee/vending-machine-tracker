@@ -10,13 +10,13 @@ feature 'When a user visits a vending machine show page' do
 
     machine.snacks += [snack_1, snack_2]
 
-    visit machine_path(dons)
+    visit machine_path(machine)
 
     expect(page).to have_content("Don's Mixed Drinks Vending Machine")
 
-    within "#snack-#{snack.id}" do
+    within "#snack-#{snack_1.id}" do
       expect(page).to have_content(snack_1.name)
-      expect(page).to have_content(snack_1.price)
+      expect(page).to have_content("Price: #{snack_1.price}")
     end
 
   end
