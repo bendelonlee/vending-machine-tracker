@@ -5,4 +5,8 @@ class Machine < ApplicationRecord
 
   has_many :snack_machines
   has_many :snacks, through: :snack_machines
+
+  def average_price
+    Snack.joins(:machines).where("snack_machines.machine_id = ?", "#{self.id}").average(:price)
+  end
 end
