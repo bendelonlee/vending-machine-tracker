@@ -6,5 +6,15 @@
   <div id="snack-<%= snack.id %>">
     <p><%= snack.name %></p>
     <p>Price: <%= snack.price %>/p>
+    <h5>Other locations:</h5>
+    <ul>
+      <% snack.machines.each do |machine| %>
+        <li>
+          <%= machine.location %> Average Price: <%= machine.average_price %>
+          <p>Number of Unique Snacks: <%= machine.snacks.count %></p>
+        </li>
+
+      <% end %>
+    </ul>
   </div>
 <% end %>
